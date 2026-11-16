@@ -32,18 +32,18 @@ window.FEATURED = [
     grades: "K-5",
     color: "#1FA2B8",
     mark: "WP",
-    image: ""
+    image: "assets/projects/wonder-pond.webp"
   },
   {
     title: "Pip's AI Lab",
     url: "https://pips-ai-lab.github.io/",
     tagline: "AI literacy for kids",
-    desc: "A free, self-paced website that helps elementary students understand what AI is, how it works, and how to use it wisely.",
-    points: ["Self-paced for students", "Designed for elementary classrooms", "Free to use"],
-    grades: "Elementary",
+    desc: "Pip is a robot who is still learning. Students help Pip, play missions, and collect stamps in their AI passport.",
+    points: ["Sprout Explorers (K-2): short missions with pictures and read-aloud help", "Trailblazers (3-5): run experiments, test Pip, and think about fairness", "Read-to-me audio, an AI passport, and a Teacher Room"],
+    grades: "K-5",
     color: "#6C5CE7",
     mark: "Pip",
-    image: ""
+    image: "assets/projects/pips-ai-lab.webp"
   }
 ];
 
