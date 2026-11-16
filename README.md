@@ -9,8 +9,13 @@ Free custom webpages, websites, and apps for teachers, built by Hyeonho Henry Yu
 - `script.js` : builds the gallery cards
 - `assets/avatar/` : avatar images
 
-## Add a project to the gallery
-Open `projects.js`, copy the Phonogram Studio block, paste it after it (add a comma between blocks), and change the details.
+## Add a project
+Open `projects.js`.
+- **Featured** (top section, large cards): the `FEATURED` list. Keep it to 2 or 3.
+- **Gallery** (filterable cards): the `PROJECTS` list. Copy a block, paste it at the top, change the details.
+  Set `category` to one of: Learning, Games, Classroom Tools, Teacher Prep, Languages.
+  Filter buttons and counts update automatically. A new category name creates a new filter button.
+- The gallery shows 6 cards first, then a "Show all" button. Change `PAGE` at the top of `script.js` to adjust.
 For a screenshot, put an image in `assets/projects/` and set `image: "assets/projects/your-file.webp"`.
 
 ## Publish on GitHub Pages

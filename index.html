@@ -23,6 +23,7 @@
         <span>Dr. Yu's <b>IMYOS</b></span>
       </a>
       <nav class="nav-links" aria-label="Main">
+        <a href="#featured">Featured</a>
         <a href="#gallery">Gallery</a>
         <a href="#how">How it works</a>
         <a href="#about">About</a>
@@ -53,18 +54,40 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
-    <section id="gallery" class="section">
+    <!-- FEATURED -->
+    <section id="featured" class="section">
       <div class="wrap">
         <div class="section-head with-avatar">
           <img src="assets/avatar/present.webp" alt="" class="avatar avatar-side" />
           <div>
-            <p class="eyebrow">Gallery</p>
-            <h2>Tools already in classrooms</h2>
-            <p class="sub">Every one of these started as a teacher's idea. Click any card to try it.</p>
+            <p class="eyebrow">Featured</p>
+            <h2>My flagship sites</h2>
+            <p class="sub">Full learning sites for elementary classrooms, free for every teacher and student.</p>
           </div>
         </div>
+        <div id="featured-grid" class="featured"></div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section section-soft">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Gallery</p>
+          <h2>More tools for real classrooms</h2>
+          <p class="sub">Filter by type or search by subject, grade, or topic. Click any card to try it.</p>
+        </div>
+        <div class="toolbar">
+          <div id="chips" class="chips" role="group" aria-label="Filter by type"></div>
+          <label class="search">
+            <span class="sr-only">Search tools</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+            <input id="search" type="search" placeholder="Search: science, K-2, music..." />
+          </label>
+        </div>
         <div id="gallery-grid" class="grid"></div>
+        <p id="empty" class="empty" hidden>No tools match that yet. <a href="#request">Request one?</a></p>
+        <div class="more-wrap"><button id="more" type="button" class="btn btn-ghost" hidden>Show all</button></div>
       </div>
     </section>
 

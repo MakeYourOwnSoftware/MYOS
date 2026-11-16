@@ -1,29 +1,158 @@
 /*
-  GALLERY PROJECTS
-  To add a new project, copy one block below, paste it at the end of the list,
-  and change the details. Save, upload to GitHub, done.
+  HOW TO ADD A PROJECT
+  Copy one block, paste it into the list (keep the commas between blocks),
+  and change the details.
 
   Fields:
     title     Project name
     url       Live link
     tagline   One short line
-    desc      Two sentences about what it does
-    grades    e.g. "K-2", "3-5", "Teacher tool"
-    tags      Short labels shown as chips
+    desc      One or two sentences
+    category  One of: "Learning" | "Games" | "Classroom Tools" | "Teacher Prep" | "Languages"
+    grades    e.g. "K-2", "3-5", "K-5", "Teachers", "All ages"
+    tags      Short labels (also used by the search box)
     color     Card color (hex)
     mark      1 to 3 letters shown on the card when there is no screenshot
-    image     Optional screenshot path, e.g. "assets/projects/phonogram.webp"
+    image     Optional screenshot, e.g. "assets/projects/ant-town.webp"
+
+  Cards appear in the order listed here. Put new projects at the top
+  of the gallery list so the newest tools show first.
 */
+
+// Flagship sites shown in their own section at the top
+window.FEATURED = [
+  {
+    title: "Wonder Pond",
+    url: "https://wonderpond.github.io/",
+    tagline: "Where curiosity comes to play",
+    desc: "A free K-5 learning game site with minute-long rounds built for big screens and interactive whiteboards. No ads, sign-ups, or installs.",
+    points: ["Games across 13 subjects, from math and reading to coding and Spanish", "Class tools: timer, random picker, scoreboard, group maker, voice meter", "Guided by mascots Edie, Hop, and Skip"],
+    grades: "K-5",
+    color: "#1FA2B8",
+    mark: "WP",
+    image: ""
+  },
+  {
+    title: "Pip's AI Lab",
+    url: "https://pips-ai-lab.github.io/",
+    tagline: "AI literacy for kids",
+    desc: "A free, self-paced website that helps elementary students understand what AI is, how it works, and how to use it wisely.",
+    points: ["Self-paced for students", "Designed for elementary classrooms", "Free to use"],
+    grades: "Elementary",
+    color: "#6C5CE7",
+    mark: "Pip",
+    image: ""
+  }
+];
+
+// Gallery
 window.PROJECTS = [
   {
     title: "Phonogram Studio",
     url: "https://hyeonhoyu.github.io/Phonogram-Studio/",
     tagline: "Practice phonogram sounds with Frog Baby",
-    desc: "Students explore and practice phonogram sounds and keywords with adjustable speaking speed. Teachers can record their own pronunciation, which plays before the AI voice.",
+    desc: "Explore and practice phonogram sounds and keywords at an adjustable speed. Teachers can record their own pronunciation.",
+    category: "Learning",
     grades: "K-2",
     tags: ["Literacy", "Phonics", "Audio"],
     color: "#5BAA4C",
     mark: "ph",
+    image: ""
+  },
+  {
+    title: "Ant Town",
+    url: "https://hyeonhoyu.github.io/Ant-Town/",
+    tagline: "Watch a queen start a brand new colony",
+    desc: "An interactive ant farm with a live colony count, life cycle guide, tappable body diagrams, and a quiz. Includes teacher resources.",
+    category: "Learning",
+    grades: "2-4",
+    tags: ["Science", "Life cycles", "Simulation"],
+    color: "#C9772E",
+    mark: "Ant",
+    image: ""
+  },
+  {
+    title: "MCS K-5 Scope & Sequence",
+    url: "https://hyeonhoyu.github.io/mcs-k5-scope-sequence/",
+    tagline: "What are MCS kids learning?",
+    desc: "Pick a grade to see the year in ELA, math, and PLTW side by side, then explore cross-subject unit ideas. Downloadable as Word.",
+    category: "Teacher Prep",
+    grades: "K-5",
+    tags: ["Curriculum", "Unit planning", "Student teaching"],
+    color: "#2E9C8F",
+    mark: "K-5",
+    image: ""
+  },
+  {
+    title: "Group Maker",
+    url: "https://hyeonhoyu.github.io/group-maker/",
+    tagline: "Groups, timers, stations, and points with Frog Baby",
+    desc: "Make groups with a shuffle or spinning wheel, rotate stations, keep score, and set presentation order. Hidden settings let teachers place students.",
+    category: "Classroom Tools",
+    grades: "Teachers",
+    tags: ["Grouping", "Timer", "Classroom management"],
+    color: "#3F8F4A",
+    mark: "GM",
+    image: ""
+  },
+  {
+    title: "Luli and the Language of Tea",
+    url: "https://hyeonhoyu.github.io/Luli-Language-of-Tea/",
+    tagline: "Ten cups, ten words",
+    desc: "An illustrated story that introduces ten words through ten cups of tea.",
+    category: "Languages",
+    grades: "All ages",
+    tags: ["Story", "Vocabulary", "Culture"],
+    color: "#8A6F4E",
+    mark: "Tea",
+    image: ""
+  },
+  {
+    title: "Bubble Cove",
+    url: "https://hyeonhoyu.github.io/BubbleCove/",
+    tagline: "Trap sea critters in bubbles and clear the cove",
+    desc: "A one- or two-player arcade game. Classroom mode adds math, reading, science, and social studies questions, or play arcade only.",
+    category: "Games",
+    grades: "K-5",
+    tags: ["Arcade", "Review game", "Two players"],
+    color: "#2F7FD8",
+    mark: "BC",
+    image: ""
+  },
+  {
+    title: "Whistle",
+    url: "https://hyeonhoyu.github.io/whistle-sports-rulebook/",
+    tagline: "Rules made easy, explained by a referee cat",
+    desc: "Plain-language sports rules with diagrams you can tap. Free, with no accounts, ads, or paywalls.",
+    category: "Learning",
+    grades: "All ages",
+    tags: ["PE", "Sports", "Rules"],
+    color: "#E0533D",
+    mark: "Wh",
+    image: ""
+  },
+  {
+    title: "Dal Tokki",
+    url: "https://hyeonhoyu.github.io/daltokki/",
+    tagline: "Korean for kids, a little each night",
+    desc: "Seven monthly units of 10-minute nightly lessons, starting with Hangul. Includes family tasks and printable worksheets. English and Spanish versions.",
+    category: "Languages",
+    grades: "Kids",
+    tags: ["Korean", "Hangul", "Families"],
+    color: "#3B4A8C",
+    mark: "달",
+    image: ""
+  },
+  {
+    title: "MusicEd Design Studio",
+    url: "https://musiced-design-studio.github.io/",
+    tagline: "K-6 music pedagogy studio",
+    desc: "Preservice teachers pick a grade, explore a concept, and draft a music lesson with guided reflection prompts. Links to a student Rhythm Lab.",
+    category: "Teacher Prep",
+    grades: "Preservice",
+    tags: ["Music", "Lesson planning", "Reflection"],
+    color: "#B0457A",
+    mark: "ME",
     image: ""
   }
 ];
