@@ -13,7 +13,9 @@
     tags      Short labels (also used by the search box)
     color     Card color (hex)
     mark      1 to 3 letters shown on the card when there is no screenshot
-    image     Optional screenshot, e.g. "assets/projects/ant-town.webp"
+    image     Optional. Leave "" and a screenshot of the live site is taken
+              automatically. Add your own file (e.g. "assets/projects/ant-town.webp")
+              only when you want a nicer, hand-picked view.
 
   Cards appear in the order listed here. Put new projects at the top
   of the gallery list so the newest tools show first.
@@ -57,7 +59,7 @@ window.PROJECTS = [
     tags: ["Literacy", "Phonics", "Audio"],
     color: "#5BAA4C",
     mark: "ph",
-    image: ""
+    image: "assets/projects/phonogram.webp"
   },
   {
     title: "Ant Town",
@@ -69,7 +71,7 @@ window.PROJECTS = [
     tags: ["Science", "Life cycles", "Simulation"],
     color: "#C9772E",
     mark: "Ant",
-    image: ""
+    image: "assets/projects/ant-town.webp"
   },
   {
     title: "MCS K-5 Scope & Sequence",
@@ -81,7 +83,7 @@ window.PROJECTS = [
     tags: ["Curriculum", "Unit planning", "Student teaching"],
     color: "#2E9C8F",
     mark: "K-5",
-    image: ""
+    image: "assets/projects/mcs-k5.webp"
   },
   {
     title: "Group Maker",
@@ -93,19 +95,19 @@ window.PROJECTS = [
     tags: ["Grouping", "Timer", "Classroom management"],
     color: "#3F8F4A",
     mark: "GM",
-    image: ""
+    image: "assets/projects/group-maker.webp"
   },
   {
     title: "Luli and the Language of Tea",
     url: "https://hyeonhoyu.github.io/Luli-Language-of-Tea/",
-    tagline: "Ten cups, ten words",
-    desc: "An illustrated story that introduces ten words through ten cups of tea.",
+    tagline: "Ten teacups. Ten ways to say tea.",
+    desc: "Explore how cultures around the world say tea, with original 3D teacups in each country's traditional style. Inspired by the picture book by Andrea Wang.",
     category: "Languages",
     grades: "All ages",
-    tags: ["Story", "Vocabulary", "Culture"],
+    tags: ["Picture book", "World cultures", "Social studies"],
     color: "#8A6F4E",
     mark: "Tea",
-    image: ""
+    image: "assets/projects/luli.webp"
   },
   {
     title: "Bubble Cove",
@@ -117,19 +119,19 @@ window.PROJECTS = [
     tags: ["Arcade", "Review game", "Two players"],
     color: "#2F7FD8",
     mark: "BC",
-    image: ""
+    image: "assets/projects/bubble-cove.webp"
   },
   {
     title: "Whistle",
     url: "https://hyeonhoyu.github.io/whistle-sports-rulebook/",
     tagline: "Rules made easy, explained by a referee cat",
-    desc: "Plain-language sports rules with diagrams you can tap. Free, with no accounts, ads, or paywalls.",
+    desc: "Plain-language rules for 49 sports, with diagrams you can tap. Free, with no accounts, ads, or paywalls.",
     category: "Learning",
     grades: "All ages",
     tags: ["PE", "Sports", "Rules"],
     color: "#E0533D",
     mark: "Wh",
-    image: ""
+    image: "assets/projects/whistle.webp"
   },
   {
     title: "Dal Tokki",
@@ -141,7 +143,7 @@ window.PROJECTS = [
     tags: ["Korean", "Hangul", "Families"],
     color: "#3B4A8C",
     mark: "달",
-    image: ""
+    image: "assets/projects/daltokki.webp"
   },
   {
     title: "MusicEd Design Studio",
@@ -153,6 +155,6 @@ window.PROJECTS = [
     tags: ["Music", "Lesson planning", "Reflection"],
     color: "#B0457A",
     mark: "ME",
-    image: ""
+    image: "assets/projects/musiced.webp"
   }
 ];

@@ -16,7 +16,9 @@ Open `projects.js`.
   Set `category` to one of: Learning, Games, Classroom Tools, Teacher Prep, Languages.
   Filter buttons and counts update automatically. A new category name creates a new filter button.
 - The gallery shows 6 cards first, then a "Show all" button. Change `PAGE` at the top of `script.js` to adjust.
-For a screenshot, put an image in `assets/projects/` and set `image: "assets/projects/your-file.webp"`.
+## Thumbnails
+- Leave `image: ""` and the card shows an automatic screenshot of the live site (free WordPress mShots service). The very first load of a new link can take a minute while the screenshot is generated.
+- For a hand-picked view, save a 16:9 image in `assets/projects/` and set `image: "assets/projects/your-file.webp"`.
 
 ## Publish on GitHub Pages
 1. Create a new repository and upload all files (keep the folder structure).

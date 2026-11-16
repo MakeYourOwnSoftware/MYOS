@@ -8,10 +8,15 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
+  // No image set? Use a free automatic screenshot of the live site.
+  // If that fails, the colored letter mark underneath stays visible.
+  function autoShot(url) {
+    return "https://s.wordpress.com/mshots/v1/" + encodeURIComponent(url) + "?w=960&h=540";
+  }
   function thumb(p) {
-    return p.image
-      ? '<img src="' + esc(p.image) + '" alt="Screenshot of ' + esc(p.title) + '" loading="lazy" />'
-      : '<span class="mark">' + esc(p.mark || p.title.charAt(0)) + "</span>";
+    var src = p.image || autoShot(p.url);
+    return '<span class="mark">' + esc(p.mark || p.title.charAt(0)) + "</span>" +
+      '<img src="' + esc(src) + '" alt="Screenshot of ' + esc(p.title) + '" loading="lazy" onerror="this.remove()" />';
   }
 
   /* ---------- Featured ---------- */
