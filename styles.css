@@ -44,7 +44,7 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 
 /* Buttons */
 .btn {
-  display: inline-block; white-space: nowrap;
+  display: inline-block;
   background: var(--navy);
   color: #fff;
   text-decoration: none;
@@ -59,8 +59,6 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 .btn-ghost:hover { background: #fff; }
 .btn-small { padding: .5em 1.1em; font-size: .92rem; }
 .btn-coffee { background: var(--sun); border-color: var(--sun); color: var(--navy); }
-.nav-coffee { display: inline-flex; align-items: center; gap: .45em; margin-right: -.6em; }
-.nav-coffee svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
 /* Nav */
 .nav {
@@ -280,11 +278,6 @@ h3 { font-size: 1.25rem; font-weight: 600; }
   .lead { margin-inline: auto; }
   .hero-figure { width: min(340px, 80vw); }
   .nav-links a:not(.btn) { display: none; }
-  .nav-links { gap: .9em; }
-  .nav-coffee { margin-right: 0; padding: .5em .7em; }
-  .nav-coffee span { display: none; }
-  .brand { font-size: 1.05rem; white-space: nowrap; }
-  .brand-face { width: 34px; height: 34px; }
   .with-avatar { flex-direction: column; align-items: flex-start; }
   .avatar-side { height: 150px; }
   .about { grid-template-columns: 1fr; }

@@ -50,6 +50,18 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "Cosmo's Planet Expedition",
+    url: "cosmo/",
+    tagline: "Fly the starship Cosmo across the solar system",
+    desc: "Pilot a starship from the Sun out to Pluto and land on each planet to open an observation card with real data and facts. Visit all 8 planets to finish the mission.",
+    category: "Games",
+    grades: "2-5",
+    tags: ["Science", "Space", "Solar system"],
+    color: "#5A4BD6",
+    mark: "Cos",
+    image: "assets/projects/cosmo.webp"
+  },
+  {
     title: "Phonogram Studio",
     url: "https://hyeonhoyu.github.io/Phonogram-Studio/",
     tagline: "Practice phonogram sounds with Frog Baby",
