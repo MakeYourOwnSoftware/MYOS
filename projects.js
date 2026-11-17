@@ -50,6 +50,18 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "Little Explorers Safari Adventure",
+    url: "safari/",
+    tagline: "Drive a jeep and find 8 safari animals",
+    desc: "A 3D safari where students drive through the savanna, follow a radar, and spot animals with binoculars to fill their field journal. Finding all 8 earns a printable explorer certificate.",
+    category: "Games",
+    grades: "K-3",
+    tags: ["Science", "Animals", "Habitats"],
+    color: "#2F7D5B",
+    mark: "Saf",
+    image: "assets/projects/safari.webp"
+  },
+  {
     title: "Cosmo's Planet Expedition",
     url: "cosmo/",
     tagline: "Fly the starship Cosmo across the solar system",
