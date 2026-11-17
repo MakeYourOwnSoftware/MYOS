@@ -50,6 +50,30 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "Literacy Quest",
+    url: "https://literacyquest.github.io/",
+    tagline: "Read, discover, create",
+    desc: "A K-5 literacy site with 80 original lessons connected to CKLA units, plus a Sound Lab for practicing letter sounds.",
+    category: "Learning",
+    grades: "K-5",
+    tags: ["Literacy", "Reading", "CKLA"],
+    color: "#1D6FE0",
+    mark: "LQ",
+    image: ""
+  },
+  {
+    title: "Pai Thiao: Thai for Bangkok",
+    url: "https://iohsk.github.io/Pai-Thiao/",
+    tagline: "Practical Thai for a trip to Bangkok",
+    desc: "Ten-minute daily Thai lessons that follow a Bangkok trip from the airport to departure, with a pocket phrasebook, slow audio, and a speaking checker. Free in English and Korean.",
+    category: "Languages",
+    grades: "Adults",
+    tags: ["Thai", "Travel", "Phrasebook"],
+    color: "#0E5E5B",
+    mark: "PT",
+    image: ""
+  },
+  {
     title: "Little Explorers Safari Adventure",
     url: "safari/",
     tagline: "Drive a jeep and find 8 safari animals",
