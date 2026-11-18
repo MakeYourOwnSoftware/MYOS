@@ -62,7 +62,7 @@ window.PROJECTS = [
     color: "#E2574C",
     mark: "CL",
     image: "",
-    shot: "2026-11-18"
+    shot: "2026-11-18-1724"
   },
   {
     title: "Classroom Management Studio",
