@@ -50,6 +50,19 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "ClassLive",
+    url: "https://hyeonhoyu.github.io/ClassLive/",
+    tagline: "Live activities for your class",
+    desc: "Run a live word cloud, sticky note board, poll, or anonymous Q&A. Students join with a room code or QR code, with no accounts or apps.",
+    category: "Classroom Tools",
+    grades: "All grades",
+    tags: ["Polls", "Word cloud", "Q&A", "Engagement"],
+    color: "#E2574C",
+    mark: "CL",
+    image: "",
+    shot: "2026-11-18"
+  },
+  {
     title: "Classroom Management Studio",
     url: "https://hyeonhoyu.github.io/classroom-management-studio/",
     tagline: "A self-study guide for elementary preservice teachers",
