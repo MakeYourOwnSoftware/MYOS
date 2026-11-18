@@ -16,6 +16,8 @@
     image     Optional. Leave "" and a screenshot of the live site is taken
               automatically. Add your own file (e.g. "assets/projects/ant-town.webp")
               only when you want a nicer, hand-picked view.
+    shot      Optional date, e.g. "2026-11-18". After you update a site, change
+              this date to get a fresh automatic screenshot.
 
   Cards appear in the order listed here. Put new projects at the top
   of the gallery list so the newest tools show first.
