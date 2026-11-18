@@ -50,6 +50,18 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "Classroom Management Studio",
+    url: "https://hyeonhoyu.github.io/classroom-management-studio/",
+    tagline: "A self-study guide for elementary preservice teachers",
+    desc: "Twelve chapters on rules, routines, praise, responding to misbehavior, restorative practices, and working with families, with research-based strategies, sample scripts, and practice scenarios.",
+    category: "Teacher Prep",
+    grades: "Preservice teachers",
+    tags: ["Classroom management", "Student teaching", "Behavior"],
+    color: "#4E8F3A",
+    mark: "CM",
+    image: ""
+  },
+  {
     title: "Literacy Quest",
     url: "https://literacyquest.github.io/",
     tagline: "Read, discover, create",
