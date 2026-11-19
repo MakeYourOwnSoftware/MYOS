@@ -1,4 +1,4 @@
-# Dr. Yu's IMYOS
+# YuMadeIt
 
 Free custom webpages, websites, and apps for teachers, built by Hyeonho Henry Yu, Ph.D.
 
