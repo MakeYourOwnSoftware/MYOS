@@ -72,7 +72,7 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
 .brand { display: flex; align-items: center; gap: .6em; text-decoration: none; color: var(--navy); font-family: "Fraunces", serif; font-size: 1.25rem; }
 .brand b { font-weight: 800; color: var(--coral); }
-.brand b.brand-it { color: #e0a800; }
+.brand b.brand-it { color: #12877a; }
 .brand-face { width: 40px; height: 40px; object-fit: cover; object-position: top; border-radius: 50%; background: #fff; border: 2px solid var(--line); }
 .nav-links { display: flex; align-items: center; gap: 1.4em; }
 .nav-links a:not(.btn) { text-decoration: none; font-weight: 700; color: var(--navy); }
