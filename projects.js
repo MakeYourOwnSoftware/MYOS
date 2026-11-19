@@ -52,6 +52,19 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "Pick a Time",
+    url: "https://hyeonhoyu.github.io/Pick-a-Time/",
+    tagline: "Find the time that works for everyone",
+    desc: "A Doodle-style scheduling poll. Make one link, share it, and everyone marks the times that work for them in their own time zone, with no sign-in.",
+    category: "Classroom Tools",
+    grades: "Teachers",
+    tags: ["Scheduling", "Meetings", "Poll", "Time zones", "Productivity"],
+    color: "#2D7FF9",
+    mark: "PaT",
+    image: "",
+    shot: "2026-11-19"
+  },
+  {
     title: "DayBrief",
     url: "https://hyeonhoyu.github.io/DayBrief/web/DayBrief.html",
     tagline: "Your day at a glance",
