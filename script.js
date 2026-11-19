@@ -43,12 +43,16 @@
   }
 
   /* ---------- Gallery filters ---------- */
+  function inCat(p, c) { return c === "All" || (c === "Favorites" ? !!p.favorite : p.category === c); }
+  var FAV = "Favorites";
   var cats = ["All"];
+  if (all.some(function (p) { return p.favorite; })) cats.push(FAV);
   all.forEach(function (p) { if (p.category && cats.indexOf(p.category) < 0) cats.push(p.category); });
   var chipBox = document.getElementById("chips");
   chipBox.innerHTML = cats.map(function (c) {
-    var n = c === "All" ? all.length : all.filter(function (p) { return p.category === c; }).length;
-    return '<button type="button" class="chip' + (c === "All" ? " on" : "") + '" data-cat="' + esc(c) + '">' + esc(c) + ' <span>' + n + "</span></button>";
+    var n = c === "All" ? all.length : all.filter(function (p) { return inCat(p, c); }).length;
+    var label = c === FAV ? '<i class="star" aria-hidden="true">&#9733;</i> My Favorites' : esc(c);
+    return '<button type="button" class="chip' + (c === "All" ? " on" : "") + (c === FAV ? " chip-fav" : "") + '" data-cat="' + esc(c) + '">' + label + ' <span>' + n + "</span></button>";
   }).join("");
   chipBox.addEventListener("click", function (e) {
     var b = e.target.closest(".chip"); if (!b) return;
@@ -75,6 +79,7 @@
         '<div class="card-thumb">' + thumb(p) +
           (p.grades ? '<span class="grade">' + esc(p.grades) + "</span>" : "") +
           (p.category ? '<span class="cat">' + esc(p.category) + "</span>" : "") +
+          (p.favorite ? '<span class="fav" title="One of Dr. Yu\'s favorites"><i aria-hidden="true">&#9733;</i> Favorite</span>' : "") +
         "</div>" +
         '<div class="card-body">' +
           "<h3>" + esc(p.title) + "</h3>" +
@@ -93,7 +98,7 @@
 
   function render() {
     var list = all.filter(function (p) {
-      if (state.cat !== "All" && p.category !== state.cat) return false;
+      if (!inCat(p, state.cat)) return false;
       if (!state.q) return true;
       var hay = [p.title, p.tagline, p.desc, p.grades, p.category].concat(p.tags || []).join(" ").toLowerCase();
       return hay.indexOf(state.q) >= 0;
