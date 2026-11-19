@@ -53,7 +53,7 @@ window.FEATURED = [
 window.PROJECTS = [
   {
     title: "Pick a Time",
-    url: "https://hyeonhoyu.github.io/Pick-a-Time/",
+    url: "https://pick-a-time.github.io/",
     tagline: "Find the time that works for everyone",
     desc: "A Doodle-style scheduling poll. Make one link, share it, and everyone marks the times that work for them in their own time zone, with no sign-in.",
     category: "Classroom Tools",
