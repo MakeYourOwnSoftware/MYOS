@@ -52,6 +52,19 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "DayBrief",
+    url: "https://hyeonhoyu.github.io/DayBrief/web/DayBrief.html",
+    tagline: "Your day at a glance",
+    desc: "A personal daily board for busy teachers. Keep meetings, to-dos with priorities, birthdays and anniversaries, and notes in one place, and see the next 7 days when you start your day.",
+    category: "Classroom Tools",
+    grades: "Teachers",
+    tags: ["Planner", "To-do", "Calendar", "Birthdays", "Productivity"],
+    color: "#F28C28",
+    mark: "DB",
+    image: "",
+    shot: "2026-11-18"
+  },
+  {
     title: "ClassLive",
     url: "https://hyeonhoyu.github.io/ClassLive/",
     tagline: "Live activities for your class",
