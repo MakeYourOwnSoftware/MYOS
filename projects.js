@@ -52,6 +52,19 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "AI Escape Lab",
+    url: "https://hyeonhoyu.github.io/ai-escape-lab/",
+    tagline: "An escape-room team challenge about AI in education",
+    desc: "Teams pick one of four missions on deepfakes, algorithmic bias, academic integrity, or student data privacy. They make a branching choice, crack locks using real and practice case evidence, and finish with a mission report to teach back to the class.",
+    category: "Teacher Prep",
+    grades: "College students",
+    tags: ["AI literacy", "Escape room", "Media literacy", "Bias", "Privacy", "Academic integrity", "Team activity"],
+    color: "#241A5E",
+    mark: "AI",
+    image: "",
+    shot: "2026-11-19"
+  },
+  {
     title: "Dr. Yu's APA 7 Paper Checker",
     url: "https://hyeonhoyu.github.io/APA-Format-Checker/",
     tagline: "Check your paper before final submission",
