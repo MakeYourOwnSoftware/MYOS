@@ -52,6 +52,19 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "Dr. Yu's APA 7 Paper Checker",
+    url: "https://hyeonhoyu.github.io/APA-Format-Checker/",
+    tagline: "Check your paper before final submission",
+    desc: "Upload a .docx or PDF to check APA 7 format on the title page, abstract, body, and references. Each problem shows the page, where it is, and how to fix it in Word or Google Docs. Files stay in your browser.",
+    category: "Teacher Prep",
+    grades: "College students",
+    tags: ["APA 7", "Writing", "Research paper", "Citations", "Formatting"],
+    color: "#7A3E9D",
+    mark: "APA",
+    image: "",
+    shot: "2026-11-19"
+  },
+  {
     title: "Pick a Time",
     url: "https://pick-a-time.github.io/",
     tagline: "Find the time that works for everyone",
