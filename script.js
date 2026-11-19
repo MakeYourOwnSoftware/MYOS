@@ -8,6 +8,23 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
+  /* ---------- Visitor favorites (saved in this browser only) ---------- */
+  var FAV_KEY = "imyos-favorites";
+  var favs = [];
+  try { favs = JSON.parse(localStorage.getItem(FAV_KEY) || "[]") || []; } catch (e) { favs = []; }
+  function isFav(p) { return favs.indexOf(p.url) >= 0; }
+  function toggleFav(url) {
+    var i = favs.indexOf(url);
+    if (i >= 0) favs.splice(i, 1); else favs.push(url);
+    try { localStorage.setItem(FAV_KEY, JSON.stringify(favs)); } catch (e) {}
+  }
+  function starBtn(p) {
+    var on = isFav(p);
+    return '<span class="star-btn' + (on ? " on" : "") + '" role="button" tabindex="0" data-fav="' + esc(p.url) + '" aria-pressed="' + on +
+      '" aria-label="' + (on ? "Remove " : "Add ") + esc(p.title) + (on ? " from" : " to") + ' My Favorites" title="' + (on ? "Remove from" : "Save to") + ' My Favorites">' +
+      (on ? "&#9733;" : "&#9734;") + "</span>";
+  }
+
   // No image set? Use a free automatic screenshot of the live site.
   // If that fails, the colored letter mark underneath stays visible.
   // The screenshot service caches each address. Change a project's "shot" date
@@ -29,7 +46,7 @@
       var pts = (p.points || []).map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
       return (
         '<a class="feature" href="' + esc(p.url) + '" target="_blank" rel="noopener" style="--c:' + esc(p.color) + '">' +
-          '<div class="feature-thumb">' + thumb(p) + '<span class="grade">' + esc(p.grades) + "</span></div>" +
+          '<div class="feature-thumb">' + thumb(p) + '<span class="grade">' + esc(p.grades) + "</span>" + starBtn(p) + "</div>" +
           '<div class="feature-body">' +
             '<p class="feature-tag">' + esc(p.tagline) + "</p>" +
             "<h3>" + esc(p.title) + "</h3>" +
@@ -43,14 +60,15 @@
   }
 
   /* ---------- Gallery filters ---------- */
-  function inCat(p, c) { return c === "All" || (c === "Favorites" ? !!p.favorite : p.category === c); }
   var FAV = "Favorites";
-  var cats = ["All"];
-  if (all.some(function (p) { return p.favorite; })) cats.push(FAV);
+  var everything = (window.FEATURED || []).concat(all);
+  function inCat(p, c) { return c === "All" || (c === FAV ? isFav(p) : p.category === c); }
+  function favCount() { return everything.filter(isFav).length; }
+  var cats = ["All", FAV];
   all.forEach(function (p) { if (p.category && cats.indexOf(p.category) < 0) cats.push(p.category); });
   var chipBox = document.getElementById("chips");
   chipBox.innerHTML = cats.map(function (c) {
-    var n = c === "All" ? all.length : all.filter(function (p) { return inCat(p, c); }).length;
+    var n = c === "All" ? all.length : c === FAV ? favCount() : all.filter(function (p) { return inCat(p, c); }).length;
     var label = c === FAV ? '<i class="star" aria-hidden="true">&#9733;</i> My Favorites' : esc(c);
     return '<button type="button" class="chip' + (c === "All" ? " on" : "") + (c === FAV ? " chip-fav" : "") + '" data-cat="' + esc(c) + '">' + label + ' <span>' + n + "</span></button>";
   }).join("");
@@ -79,7 +97,7 @@
         '<div class="card-thumb">' + thumb(p) +
           (p.grades ? '<span class="grade">' + esc(p.grades) + "</span>" : "") +
           (p.category ? '<span class="cat">' + esc(p.category) + "</span>" : "") +
-          (p.favorite ? '<span class="fav" title="One of Dr. Yu\'s favorites"><i aria-hidden="true">&#9733;</i> Favorite</span>' : "") +
+          starBtn(p) +
         "</div>" +
         '<div class="card-body">' +
           "<h3>" + esc(p.title) + "</h3>" +
@@ -97,7 +115,8 @@
     "<p>Have an idea for your classroom? Tell me about it.</p></div></a>";
 
   function render() {
-    var list = all.filter(function (p) {
+    var source = state.cat === FAV ? everything : all;
+    var list = source.filter(function (p) {
       if (!inCat(p, state.cat)) return false;
       if (!state.q) return true;
       var hay = [p.title, p.tagline, p.desc, p.grades, p.category].concat(p.tags || []).join(" ").toLowerCase();
@@ -106,10 +125,32 @@
     var shown = state.expanded ? list : list.slice(0, PAGE);
     grid.innerHTML = shown.map(card).join("") + (list.length && (state.expanded || list.length <= PAGE) ? nextCard : "");
     empty.hidden = list.length > 0;
+    empty.innerHTML = state.cat === FAV && !state.q
+      ? "No favorites yet. Tap the &#9734; on any tool to save it here. Favorites stay in this browser."
+      : 'No tools match that yet. <a href="#request">Request one?</a>';
     moreBtn.hidden = list.length <= PAGE;
     moreBtn.textContent = state.expanded ? "Show fewer" : "Show all " + list.length + " tools";
   }
   render();
+
+  /* Star clicks: save without opening the card's link */
+  function onStar(e) {
+    var b = e.target.closest && e.target.closest(".star-btn"); if (!b) return;
+    if (e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
+    e.preventDefault(); e.stopPropagation();
+    var url = b.getAttribute("data-fav");
+    toggleFav(url);
+    var on = favs.indexOf(url) >= 0;
+    document.querySelectorAll('.star-btn[data-fav="' + url.replace(/"/g, '\\"') + '"]').forEach(function (x) {
+      x.classList.toggle("on", on); x.setAttribute("aria-pressed", on);
+      x.innerHTML = on ? "&#9733;" : "&#9734;";
+      x.title = (on ? "Remove from" : "Save to") + " My Favorites";
+    });
+    var c = chipBox.querySelector('.chip-fav span'); if (c) c.textContent = favCount();
+    if (state.cat === FAV) render();
+  }
+  document.addEventListener("click", onStar, true);
+  document.addEventListener("keydown", onStar, true);
 
   document.getElementById("year").textContent = new Date().getFullYear();
 

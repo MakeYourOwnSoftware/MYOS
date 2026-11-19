@@ -16,7 +16,6 @@
     image     Optional. Leave "" and a screenshot of the live site is taken
               automatically. Add your own file (e.g. "assets/projects/ant-town.webp")
               only when you want a nicer, hand-picked view.
-    favorite  Optional. Set to true to star the card and list it under "My Favorites"
     shot      Optional date, e.g. "2026-11-18". After you update a site, change
               this date to get a fresh automatic screenshot.
 
