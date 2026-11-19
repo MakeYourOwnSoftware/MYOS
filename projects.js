@@ -62,7 +62,7 @@ window.PROJECTS = [
     color: "#2D7FF9",
     mark: "PaT",
     image: "",
-    shot: "2026-11-19"
+    shot: "2026-11-19-1030"
   },
   {
     title: "DayBrief",
