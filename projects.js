@@ -52,6 +52,19 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "Lily Pad Lab",
+    url: "https://hyeonhoyu.github.io/Lily-Pad-Lab/",
+    tagline: "Snap blocks. Make Lily move.",
+    desc: "A Scratch-style block coding site where students snap blocks together to make Lily the frog move, draw, talk, and score. Six guided missions build from a first hop to a catch-and-score game, and projects save in the browser.",
+    category: "Learning",
+    grades: "K-5",
+    tags: ["Coding", "Block coding", "Computer science", "Scratch-style", "Missions"],
+    color: "#3E9B5F",
+    mark: "LP",
+    image: "",
+    shot: "2026-11-20"
+  },
+  {
     title: "CommonRoom",
     url: "https://hyeonhoyu.github.io/CommonRoom/",
     tagline: "A shared classroom on the web",
