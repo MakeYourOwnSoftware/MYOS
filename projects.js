@@ -52,6 +52,19 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "CommonRoom",
+    url: "https://hyeonhoyu.github.io/CommonRoom/",
+    tagline: "A shared classroom on the web",
+    desc: "A virtual classroom where students and teachers walk around as avatars, chat, and talk with people nearby by voice. Includes a stage that reaches the whole room, private group rooms, and teacher controls to gather, mute, or lock the class.",
+    category: "Classroom Tools",
+    grades: "All grades",
+    tags: ["Virtual classroom", "Voice chat", "Avatars", "Group rooms", "Online class"],
+    color: "#3A6EA5",
+    mark: "CR",
+    image: "",
+    shot: "2026-11-20"
+  },
+  {
     title: "AI Escape Lab",
     url: "https://hyeonhoyu.github.io/ai-escape-lab/",
     tagline: "An escape-room team challenge about AI in education",
