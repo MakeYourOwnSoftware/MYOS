@@ -136,8 +136,8 @@
     pickBox.style.setProperty("--c", p.color || "#2b3a67");
     pickBox.innerHTML =
       '<div class="pick-label">' +
-        '<img src="assets/avatar/thumbsup.webp" alt="" class="pick-avatar" />' +
-        '<div><p class="eyebrow">Today\'s Pick</p>' +
+        '<span class="pick-avatar"><img src="assets/avatar/thumbsup.webp" alt="" /></span>' +
+        '<div><p class="pick-title">Today\'s Pick</p>' +
         '<p class="pick-note">A tool from the archive you may have missed.</p>' +
         (pool.length > 1 ? '<button type="button" class="pick-next">Show me another &#8635;</button>' : "") +
         "</div>" +
