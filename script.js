@@ -114,7 +114,55 @@
     '<span class="plus">+</span><h3>Your tool here</h3>' +
     "<p>Have an idea for your classroom? Tell me about it.</p></div></a>";
 
+  /* ---------- Today's Pick ----------
+     Picks one older tool (not among the first PAGE cards) so it gets seen again.
+     The pick is based on today's date: everyone sees the same tool all day,
+     and it changes tomorrow. "Show me another" steps to the next older tool. */
+  var pickBox = document.getElementById("pick");
+  var pool = all.slice(PAGE);
+  var pickIdx = 0;
+  if (pool.length) {
+    var d = new Date();
+    var seed = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+    seed = (seed * 2654435761) >>> 0; // spread neighboring dates apart
+    pickIdx = seed % pool.length;
+  }
+  function renderPick() {
+    if (!pickBox) return;
+    var show = pool.length && state.cat === "All" && !state.q;
+    pickBox.hidden = !show;
+    if (!show) return;
+    var p = pool[pickIdx];
+    pickBox.style.setProperty("--c", p.color || "#2b3a67");
+    pickBox.innerHTML =
+      '<div class="pick-label">' +
+        '<img src="assets/avatar/thumbsup.webp" alt="" class="pick-avatar" />' +
+        '<div><p class="eyebrow">Today\'s Pick</p>' +
+        '<p class="pick-note">A tool from the archive you may have missed.</p>' +
+        (pool.length > 1 ? '<button type="button" class="pick-next">Show me another &#8635;</button>' : "") +
+        "</div>" +
+      "</div>" +
+      '<a class="pick-card" href="' + esc(p.url) + '" target="_blank" rel="noopener">' +
+        '<div class="card-thumb pick-thumb">' + thumb(p) +
+          (p.grades ? '<span class="grade">' + esc(p.grades) + "</span>" : "") +
+          starBtn(p) +
+        "</div>" +
+        '<div class="pick-body">' +
+          "<h3>" + esc(p.title) + "</h3>" +
+          '<p class="tagline">' + esc(p.tagline) + "</p>" +
+          "<p>" + esc(p.desc) + "</p>" +
+          '<span class="try">Try it &rarr;</span>' +
+        "</div>" +
+      "</a>";
+  }
+  if (pickBox) pickBox.addEventListener("click", function (e) {
+    if (!e.target.closest(".pick-next")) return;
+    pickIdx = (pickIdx + 1) % pool.length;
+    renderPick();
+  });
+
   function render() {
+    renderPick();
     var source = state.cat === FAV ? everything : all;
     var list = source.filter(function (p) {
       if (!inCat(p, state.cat)) return false;

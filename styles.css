@@ -166,6 +166,46 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 .card-next p { color: var(--muted); }
 .plus { width: 64px; height: 64px; border-radius: 50%; background: var(--sun); color: var(--navy); font-size: 2.4rem; font-weight: 800; display: grid; place-items: center; margin-bottom: 14px; }
 
+/* Today's Pick */
+.pick {
+  display: grid; grid-template-columns: 260px 1fr; gap: 0; margin-bottom: 28px;
+  background: var(--cream); border: 2px solid var(--sun); border-radius: 28px; overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.pick[hidden] { display: none; }
+.pick-label {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  gap: 6px; padding: 22px 20px; background: #fff3cf;
+}
+.pick-label .eyebrow { margin: 0; }
+.pick-avatar { height: 120px; width: auto; filter: drop-shadow(0 8px 10px rgba(35,44,79,.18)); }
+.pick-note { margin: .2em 0 .8em; color: var(--muted); font-size: .92rem; }
+.pick-next {
+  font: inherit; font-weight: 800; font-size: .88rem; color: var(--navy); cursor: pointer;
+  background: #fff; border: 1.5px solid var(--navy); border-radius: 999px; padding: .4em 1em;
+  transition: background .15s ease;
+}
+.pick-next:hover { background: var(--sun); }
+.pick-card {
+  display: grid; grid-template-columns: minmax(220px, 42%) 1fr; text-decoration: none; color: inherit;
+  background: #fff; transition: background .2s ease;
+}
+.pick-card:hover { background: #fffdf8; }
+.pick-card:hover .card-thumb img { transform: scale(1.04); }
+.pick-card { align-items: center; }
+.pick-thumb { aspect-ratio: 16 / 9; margin: 18px 0 18px 18px; border-radius: 16px; }
+.pick-body { padding: 24px 28px; display: flex; flex-direction: column; }
+.pick-body h3 { font-size: 1.5rem; margin-bottom: .15em; }
+.pick-body p { margin: 0 0 .8em; color: var(--muted); }
+.pick-body .tagline { color: var(--c); font-weight: 800; }
+@media (max-width: 860px) {
+  .pick { grid-template-columns: 1fr; }
+  .pick-label { flex-direction: row; text-align: left; justify-content: flex-start; gap: 16px; }
+  .pick-avatar { height: 90px; }
+  .pick-card { grid-template-columns: 1fr; }
+  .pick-thumb { margin: 0; border-radius: 0; }
+}
+
 /* Featured */
 .section-soft { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .featured { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
