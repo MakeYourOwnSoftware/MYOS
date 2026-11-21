@@ -52,6 +52,19 @@ window.FEATURED = [
 // Gallery
 window.PROJECTS = [
   {
+    title: "Slides to Canvas Video Guide",
+    url: "https://hyeonhoyu.github.io/Slides-to-Canvas-Video-Guide/",
+    tagline: "From slides to Canvas: your presentation video in three steps",
+    desc: "A step-by-step guide for students to record a narrated slide presentation with their face on screen, upload it to YouTube as Unlisted, and submit it in Canvas. Includes a link and embed maker, troubleshooting tips, and a final checklist.",
+    category: "Teacher Prep",
+    grades: "College students",
+    tags: ["Video presentation", "Canvas", "YouTube", "PowerPoint", "Recording", "How-to"],
+    color: "#C8553D",
+    mark: "S2C",
+    image: "",
+    shot: "2026-11-21"
+  },
+  {
     title: "Lily Pad Lab",
     url: "https://hyeonhoyu.github.io/Lily-Pad-Lab/",
     tagline: "Snap blocks. Make Lily move.",
